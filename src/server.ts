@@ -18,3 +18,7 @@ app.use(router);
 app.use(exceptionsFunction);
 
 app.listen(port, () => console.log(`Servidor Online: http:/\/\localhost:${port}`))
+
+AppDataSource.initialize()
+    .then(() => console.log("Banco de dados ativo"))
+    .catch(console.error);

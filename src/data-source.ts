@@ -1,24 +1,14 @@
+import "reflect-metadata";
 import 'dotenv/config';
 import { DataSource } from "typeorm";
-import { Task } from "./entities/tarefa";
-
+import { Task } from './entities/domain/tarefa';
 
 export const AppDataSource = new DataSource({
-    type: "postgres",
-    host: "localhost",
-    port: 5432,
-    username: "postgres",
-    password: "postgres",
-    database: "tasks",
+    type: "sqlite",
+    database: "./db.sqlite",
     synchronize: false,
     logging: true,
-    entities: [ Task ],
+    entities: [Task],
     subscribers: [],
-    migrations: ["src/**/migrations/*.{js,ts}"]
+    migrations: ["src/migrations/**/*.{js,ts}"]
 });
-
-
-
-AppDataSource.initialize()
-    .then(() => console.log("Banco de dados ativo"))
-    .catch(console.error);
