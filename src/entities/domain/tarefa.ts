@@ -17,6 +17,9 @@ export class Task {
   @Column({ nullable: true })
   tags: string;
 
+  @Column({ default: ""})
+  author: string;
+
   @Column({ type: 'boolean', default: false })
   done: boolean;
 }

@@ -3,7 +3,7 @@ import { Task } from './entities/domain/tarefa';
 
 export const AppDataSource = new DataSource({
     type: "sqlite",
-    database: "./db.sqlite",
+    database: "./database.sqlite",
     synchronize: true,
     logging: true,
     entities: [Task],
