@@ -2,6 +2,7 @@ import express from 'express';
 import { router } from './routers';
 import 'express-async-errors';
 import { exceptionsFunction } from './middlewares/exceptions';
+import { AppDataSource } from './data-source';
 import cors from 'cors';
 
 const port = 3333;
@@ -16,8 +17,4 @@ app.use(router);
 
 app.use(exceptionsFunction);
 
-try {
-    app.listen(port, () => console.log(`Servidor Online: http:/\/\localhost:${port}`))
-} catch (error){
-    console.log(error);
-}
+app.listen(port, () => console.log(`Servidor Online: http:/\/\localhost:${port}`))

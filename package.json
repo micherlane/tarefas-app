@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon --ignore node_modules src/server.ts",
-    "typeorm": "node -r ts-node/register --env-file=.env ./node_modules/.bin/typeorm -d ./src/data-source.ts",
+    "typeorm": "typeorm-ts-node-commonjs",
     "tsc": "tsc"
   },
   "dependencies": {
