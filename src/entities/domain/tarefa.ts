@@ -1,6 +1,6 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity()
+@Entity("Tasks")
 export class Task {
   @PrimaryGeneratedColumn()
   id: number;
@@ -15,7 +15,7 @@ export class Task {
   created_at: Date;
 
   @Column({ nullable: true })
-  tags: string
+  tags: string;
 
   @Column({ type: 'boolean', default: false })
   done: boolean;

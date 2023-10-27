@@ -1,8 +1,9 @@
+import "reflect-metadata";
+import 'express-async-errors';
 import express from 'express';
 import { router } from './routers';
-import 'express-async-errors';
 import { exceptionsFunction } from './middlewares/exceptions';
-import { AppDataSource } from './data-source';
+import './data-source';
 import cors from 'cors';
 
 const port = 3333;
@@ -18,7 +19,3 @@ app.use(router);
 app.use(exceptionsFunction);
 
 app.listen(port, () => console.log(`Servidor Online: http:/\/\localhost:${port}`))
-
-AppDataSource.initialize()
-    .then(() => console.log("Banco de dados ativo"))
-    .catch(console.error);

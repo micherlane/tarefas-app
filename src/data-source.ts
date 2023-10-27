@@ -1,5 +1,3 @@
-import "reflect-metadata";
-import 'dotenv/config';
 import { DataSource } from "typeorm";
 import { Task } from './entities/domain/tarefa';
 
@@ -12,3 +10,8 @@ export const AppDataSource = new DataSource({
     subscribers: [],
     migrations: ["src/migrations/**/*.{js,ts}"]
 });
+
+
+AppDataSource.initialize()
+    .then(() => console.log("Banco de dados ativo"))
+    .catch(console.error);
