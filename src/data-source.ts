@@ -10,8 +10,3 @@ export const AppDataSource = new DataSource({
     subscribers: [],
     migrations: ["src/migrations/**/*.{js,ts}"]
 });
-
-
-AppDataSource.initialize()
-    .then(() => console.log("Banco de dados ativo"))
-    .catch(console.error);
