@@ -1,11 +1,8 @@
-import { Router, Request, Response } from 'express';
+import { Router } from 'express';
+import { TaskCreateController } from './controllers/task/TaskCreateController';
 
 const router = Router();
 
-router.get('/teste', (req: Request, res: Response) => {
-    return res.json({
-        ok: true
-    });
-});
+router.post('/tasks', new TaskCreateController().handle);
 
 export { router }
