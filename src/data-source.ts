@@ -4,9 +4,9 @@ import { Task } from './entities/domain/tarefa';
 export const AppDataSource = new DataSource({
     type: "sqlite",
     database: "./db.sqlite",
-    synchronize: false,
+    synchronize: true,
     logging: true,
     entities: [Task],
     subscribers: [],
-    migrations: ["src/migrations/**/*.{js,ts}"]
+    migrations: []
 });
